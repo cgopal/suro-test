@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+jobs:
+  execute-scan-workflow:
+    uses: threatrix/threat-agent-scan/.github/workflows/scan-repo-reusable.yaml@master
+    with:
+      eid: 1c9e4f9a-1a6d-4ad5-878b-4df994ac63df
+      oid: 0602cda4-81ec-45c0-b32e-feaeecd70746
+      app-name: suro-test
+      trx-host: https://app.threatrix.io
+    secrets:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      THREATRIX_SERVER_API_KEY: ${{ secrets.THREATRIX_API_KEY }}
